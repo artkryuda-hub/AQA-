@@ -74,7 +74,22 @@ public class Homework2 {
     }
 
     private static void sumCalculation(Scanner scanner) {
-        System.out.println("Задание 3");
+        System.out.print("Введите число: ");
+        int x = scanner.nextInt();
+
+        int sum = 0;
+
+        if (x >= 0) {
+            for (int i = 0; i <= x; i++) {
+                sum += i;
+            }
+        } else {
+            for (int i = 0; i >= x; i--) {
+                sum += i;
+            }
+        }
+
+        System.out.printf("Сумма всех чисел от 0 до %d равна %d%n", x, sum);
     }
 
     private static void tvControlRemote(Scanner scanner) {
