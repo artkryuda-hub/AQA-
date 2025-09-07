@@ -6,10 +6,11 @@ public class Homework2 {
         System.out.println("Домашнее задание");
         System.out.println("1 - Задание №1");
         System.out.println("2 - Задание №2");
-        System.out.println("3 - Задание №3)");
+        System.out.println("3 - Задание №3");
         System.out.println("4 - Задание №4");
 
         int choice = scanner.nextInt();
+        scanner.nextLine();
 
         switch (choice) {
             case 1: pointCheck(scanner); break;
@@ -50,7 +51,26 @@ public class Homework2 {
         }
     }
     private static void exitLoop(Scanner scanner) {
-        System.out.println("Задание 2");
+        System.out.println("\nЦикл с выходом по 'Exit'");
+        System.out.println("Вводите строки. Для выхода введите 'Exit'");
+
+        String userInput;
+
+        while (true) {
+            System.out.print("Введите строку: ");
+            userInput = scanner.nextLine().trim();
+
+            if (userInput.equalsIgnoreCase("exit")) {
+                System.out.println("Выход из программы...");
+                break;
+            }
+
+            if (userInput.isEmpty()) {
+                System.out.println("Вы ввели пустую строку!");
+            } else {
+                System.out.println("Вы ввели: " + userInput);
+            }
+        }
     }
 
     private static void sumCalculation(Scanner scanner) {
