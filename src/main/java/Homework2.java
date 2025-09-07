@@ -92,8 +92,47 @@ public class Homework2 {
         System.out.printf("Сумма всех чисел от 0 до %d равна %d%n", x, sum);
     }
 
-    private static void tvControlRemote(Scanner scanner) {
-        System.out.println("Задание 4");
+    private static void tvControlRemote(Scanner scanner)  {
+        System.out.println("\nПульт от телевизора");
+
+        String[] channels = {
+                "Беларусь 1",
+                "Беларусь 2",
+                "НТВ",
+                "ТНТ",
+                "СТВ",
+                "Беларусь 3",
+                "Матч ТВ",
+                "Беларусь 4",
+                "Беларусь 5",
+                "СТВ Спорт"
+        };
+
+        int channelNumber;
+
+        System.out.println("Доступные каналы: 1-" + channels.length);
+        System.out.println("0 - для выхода");
+        while (true) {
+            System.out.print("Введите номер канала: ");
+            if (scanner.hasNextInt()) {
+                channelNumber = scanner.nextInt();
+
+                if (channelNumber == 0) {
+                    System.out.println("Выключение телевизора...");
+                    break;
+                }
+                if (channelNumber >= 1 && channelNumber <= channels.length) {
+                    String channelName = channels[channelNumber - 1];
+                    System.out.println("Сейчас включен: " + channelName);
+                } else {
+                    System.out.println("Канала " + channelNumber + " не существует!");
+                }
+
+            } else {
+                String input = scanner.next();
+                System.out.println("Ошибка! Введите число от 1 до " + channels.length + " или 0 для выхода");
+            }
+        }
     }
 }
 
